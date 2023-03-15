@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+    e2etest:
+        image: chariot-colonial-docker.jfrog.io/colonial/ngb/e2etest:${E2ETEST_VERSION_TAG:?E2ETEST_VERSION_TAG}
+        command: headless
+        # command: headless --spec 'cypress/integration/securityTests/**/*.js'
+        environment:
+            CYPRESS_baseUrl: 'http://${E2ETEST_LOCALHOST?E2ETEST_LOCALHOST}:4200'
+            CYPRESS_imap_host: '${E2ETEST_LOCALHOST?E2ETEST_LOCALHOST}'
+            CYPRESS_imap_port: 993
+            CYPRESS_imap_folder: INBOX
+        restart: "no"
+        network_mode: "host"
+        shm_size: '1g'

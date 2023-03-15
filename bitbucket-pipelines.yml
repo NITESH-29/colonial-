@@ -1,0 +1,116 @@
+image:
+    name: 'chariot-colonial-docker.jfrog.io/colonial/ngb/buildbox:1.0.0'
+    username: $ARTIFACTORY_USER
+    password: $ARTIFACTORY_API_KEY
+    email: jlabonski@chariotsolutions.com
+
+options:
+    docker: true
+    max-time: 20
+
+clone:
+    depth: full
+
+pipelines:
+    default:
+        - step:
+            name: "Lint, build, test"
+            caches:
+                - node
+            script:
+                - '/devops/setup.sh'
+                - 'npm install'
+                - 'npm run validate-package'
+                - 'npm run lint'
+                - 'npm run format:verify'
+                - 'npm run test:ci'
+                # e2e testing goes here
+                - 'npm run build:prod'
+    branches:
+        develop:
+            - step:
+                name: "Develop: lint, build, test, publish"
+                caches:
+                    - node
+                artifacts:
+                    - '*.tar.gz'
+                script:
+                    - '/devops/setup.sh'
+                    - 'npm install'
+                    - 'npm run validate-package'
+                    - 'npm run lint'
+                    - 'npm run format:verify'
+                    - 'npm run test:ci'
+                    - 'npm run build:prod'
+                    - '/devops/javascript/create_artifacts.sh dist/colonial'
+                    - '/devops/artifactory_uploader.sh colonial-workbench/colonial-ui'
+                    - '/devops/docker.sh --build-arg BASE_HREF=/quote --build-arg API_HREF=/quote/api'
+
+        master:
+            - step:
+                name: "Master: lint, build, test, publish"
+                caches:
+                    # No cache for master, build fresh
+                artifacts:
+                    - '*.tar.gz'
+                script:
+                    - '/devops/setup.sh'
+                    - 'npm install'
+                    - 'npm run validate-package'
+                    - 'npm run lint'
+                    - 'npm run format:verify'
+                    - 'npm run test:ci'
+                    - 'npm run build:prod'
+                    - '/devops/javascript/create_artifacts.sh dist/colonial'
+                    - '/devops/artifactory_uploader.sh colonial-workbench/colonial-ui'
+                    - '/devops/docker.sh --build-arg BASE_HREF=/quote --build-arg API_HREF=/quote/api'
+
+        release/*:
+            - step:
+                name: Lint, build, test, publish RC
+                caches:
+                    - node
+                artifacts:
+                    - '*.tar.gz'
+                script:
+                    - '/devops/setup.sh'
+                    - 'npm install'
+                    - 'npm run validate-package'
+                    - 'npm run lint'
+                    - 'npm run format:verify'
+                    - 'npm run test:ci'
+                    - 'npm run build:prod'
+                    - '/devops/javascript/create_artifacts.sh dist/colonial'
+                    - '/devops/artifactory_uploader.sh colonial-workbench/colonial-ui'
+                    - '/devops/docker.sh --build-arg BASE_HREF=/quote --build-arg API_HREF=/quote/api'
+            - step:
+                name: "Release new version"
+                trigger: manual
+                script:
+                    - /devops/setup.sh
+                    - /devops/git/gitflow.sh
+
+        hotfix/*:
+            - step:
+                name: Lint, build, test, publish RC
+                caches:
+                    - node
+                artifacts:
+                    - '*.tar.gz'
+                script:
+                    - '/devops/setup.sh'
+                    - 'npm install'
+                    - 'npm run validate-package'
+                    - 'npm run lint'
+                    - 'npm run format:verify'
+                    - 'npm run test:ci'
+                    - 'npm run build:prod'
+                    - '/devops/javascript/create_artifacts.sh dist/colonial'
+                    - '/devops/artifactory_uploader.sh colonial-workbench/colonial-ui'
+                    - '/devops/docker.sh --build-arg BASE_HREF=/quote --build-arg API_HREF=/quote/api'
+            - step:
+                name: "Release hotfix"
+                trigger: manual
+                script:
+                    - /devops/setup.sh
+                    - /devops/git/gitflow.sh

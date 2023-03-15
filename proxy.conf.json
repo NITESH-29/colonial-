@@ -1,0 +1,5 @@
+[{
+  "context": "/api",
+  "target": "http://10.222.35.183:9093/",
+  "secure": false
+}]

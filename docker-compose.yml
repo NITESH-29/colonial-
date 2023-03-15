@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+    colonial-ui:
+        image: chariot-colonial-docker.jfrog.io/colonial/ngb/colonial-ui:${COLONIAL_UI_VERSION_TAG:?COLONIAL_UI_VERSION_TAG}
+        build:
+            context: .
+            args:
+                BASE_HREF: /quote
+                API_HREF: /quote/api
+        environment:
+            PROXY_URI: http://spring:8080/api
+            SERVER_NAME: colonial-ui
+        ports:
+            - target: 80
+              published: 80
+              protocol: tcp
+              mode: host
+        expose:
+            - 80
+        external_links:
+            - colonial_spring_1:"spring"
+        networks:
+            - devnet
+
+    pipeline-test:
+        image: chariot-colonial-docker.jfrog.io/colonial/ngb/buildbox:${BUILDBOX_VERSION_TAG:?BUILDBOX_VERSION_TAG}
+        entrypoint: /bin/bash
+        ports:
+            - target: 80
+              published: 80
+              protocol: tcp
+              mode: host
+        volumes:
+            - type: bind
+              source: .
+              target: /build
+            - type: bind
+              source: /var/run/docker.sock
+              target: /var/run/docker.sock
+
+networks:
+    devnet:
+        external: true
+        name: colonial_devnet
