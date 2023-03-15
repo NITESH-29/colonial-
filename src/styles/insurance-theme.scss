@@ -1,0 +1,818 @@
+@import "variables";
+
+@font-face {
+  font-family: "quicksand-regular";
+  src: url("./font/quicksand/Quicksand-Regular.eot");
+  src: url("./font/quicksand/Quicksand-Regular.eot?#iefix") format("embedded-opentype"),
+    url("./font/quicksand/Quicksand-Regular.woff2") format("woff2"),
+    url("./font/quicksand/Quicksand-Regular.woff") format("woff"),
+    url("./font/quicksand/Quicksand-Regular.ttf") format("truetype"),
+    url("./font/quicksand/Quicksand-Regular.svg#Quicksand-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "quicksand-bold";
+  src: url("./font/quicksand/Quicksand-Bold.eot");
+  src: url("./font/quicksand/Quicksand-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./font/quicksand/Quicksand-Bold.woff2") format("woff2"),
+    url("./font/quicksand/Quicksand-Bold.woff") format("woff"),
+    url("./font/quicksand/Quicksand-Bold.ttf") format("truetype"),
+    url("./font/quicksand/Quicksand-Bold.svg#Quicksand-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "quicksand-semi-bold";
+  src: url("./font/quicksand/Quicksand-SemiBold.eot");
+  src: url("./font/quicksand/Quicksand-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("./font/quicksand/Quicksand-SemiBold.woff2") format("woff2"),
+    url("./font/quicksand/Quicksand-SemiBold.woff") format("woff"),
+    url("./font/quicksand/Quicksand-SemiBold.ttf") format("truetype"),
+    url("./font/quicksand/Quicksand-SemiBold.svg#Quicksand-SemiBold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "quicksand-medium";
+  src: url("./font/quicksand/Quicksand-Medium.eot");
+  src: url("./font/quicksand/Quicksand-Medium.eot?#iefix") format("embedded-opentype"),
+    url("./font/quicksand/Quicksand-Medium.woff2") format("woff2"),
+    url("./font/quicksand/Quicksand-Medium.woff") format("woff"),
+    url("./font/quicksand/Quicksand-Medium.ttf") format("truetype"),
+    url("./font/quicksand/Quicksand-Medium.svg#Quicksand-Medium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "robotoregular";
+  src: url("../styles/font/roboto-regular-webfont.woff2") format("woff2"),
+    url("../styles/font/roboto-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Some common themes for header - Do not change names */
+.insurance-theme {
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.32);
+    z-index: 999;
+  }
+
+  app-footer>.ui-grid {
+    margin-top: 30px !important;
+
+    .footer-cta {
+      font-family: quicksand-regular;
+    }
+
+    .h3-regular {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    .body-large {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    .tel {
+      font-weight: normal;
+    }
+
+    .ui-grid-row div {
+      font-family: quicksand-regular;
+    }
+  }
+}
+
+.site-header {
+  background-color: $mat-insurance-color-white;
+  border-bottom: 1px solid $mat-insurance-color-light-blue !important;
+  box-shadow: 0px 4px 5px -3px rgba(173, 198, 212, 0.3) !important;
+
+  .menu-container {
+    mat-icon {
+      color: $insurance-header-menu-color;
+      top: -22px;
+      width: 32px;
+      height: 32px;
+      font-size: 32px;
+    }
+  }
+}
+
+.application-logout {
+  float: right;
+  width: 100%;
+  text-align: right;
+  margin-top: 17px;
+  /* float: right;
+  width: 83%;
+  text-align: right;
+  position: relative;
+  margin-top: 20px; */
+}
+
+.login-button {
+  background-color: $insurance-btn-color-red !important;
+  box-shadow: none !important;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+/**/
+
+.main-insurance-body-background {
+  background: $body-insurance-background-color !important;
+}
+
+.mat-insurance-app-background {
+  background: $body-insurance-background-color !important;
+}
+
+.insurance-main-container {
+  margin-top: 80px;
+}
+
+.insurance-main-container-xs {
+  margin-top: 70px;
+}
+
+.mat-insurance-breadcrum-home-icon,
+.mat-insurance-breadcrum-back-icon {
+  color: $mat-icon-color-colonial-blue !important;
+}
+
+.mat-insurance-breadcrum-navnext-icon {
+  color: $mat-icon-color-colonial-blue !important;
+  margin: 0x 5px !important;
+}
+
+.mat-insurance-breadcrum-text {
+  position: relative;
+  top: -6px;
+  line-height: 20px;
+  font-family: quicksand-bold !important;
+  font-size: 16px !important;
+  color: $mat-icon-color-colonial-blue !important;
+  text-decoration: none;
+}
+
+.mat-insurance-required-icon {
+  font-family: quicksand-bold !important;
+  font-size: 17px !important;
+  color: $mat-insurance-color-red !important;
+  text-decoration: none solid rgb(255, 0, 0) !important;
+}
+
+.horizontal-dashed-row {
+  border: none !important;
+  border-top: 1px dashed $mat-insurance-color-grey !important;
+  width: 100% !important;
+  height: 1px !important;
+  margin: 0 !important;
+  margin-top: 10px !important;
+}
+
+.semi-bold {
+  font-family: "quicksand-semi-bold";
+}
+
+.mat-insurance-question-label {
+  width: 385px !important;
+  height: 20px !important;
+  /* First Name* */
+  font-family: quicksand-medium;
+  font-size: 16px !important;
+  color: $mat-insurance-color-dark-grey !important;
+  text-decoration: none solid rgb(68, 68, 68) !important;
+
+  strong {
+    font-weight: normal;
+    font-family: quicksand-bold;
+  }
+}
+
+.mat-insurance-question-label span.note {
+  font-size: 14px;
+  color: $insurance-agreement-limit-label !important;
+  font-family: quicksand-regular;
+}
+
+.mat-insurance-question-input-element,
+.mat-insurance-question-select-element,
+.mat-insurance-question-select-with-search-element {
+  width: calc(100% - 22px);
+  height: 45px;
+  padding: 0 10px;
+  line-height: 45px;
+  border: 1px solid $mat-insurance-color-light-grey;
+  background-color: $mat-insurance-color-white !important;
+  background-size: cover !important;
+  font-family: quicksand-medium !important;
+  font-size: 16px !important;
+  color: $mat-insurance-color-dark-grey !important;
+  text-decoration: none solid rgb(68, 68, 68) !important;
+
+  &[disabled],
+  &.mat-select-disabled {
+    background: $insurance-border-grey !important;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $mat-insurance-color-grey;
+  }
+
+  &::placeholder,
+  &:-ms-input-placeholder,
+  .mat-select-placeholder {
+    color: $insurance-placeholder-grey;
+    opacity: 1;
+    font-family: quicksand-medium;
+  }
+
+  &::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+// .mat-input-element:disabled {
+//   background: $insurance-border-grey;
+// }
+
+.mat-insurance-question-input-element-readonly {
+  @extend .mat-insurance-question-input-element;
+  background: $insurance-border-grey !important;
+
+  .mat-input-element:disabled {
+    color: $mat-insurance-color-dark-grey !important;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid $mat-insurance-color-light-grey;
+  }
+}
+
+.mat-select.mat-insurance-question-select-element,
+.mat-select.mat-insurance-question-select-with-search-element {
+  width: calc(100% - 22px);
+
+  .mat-select-placeholder {
+    color: $insurance-placeholder-grey;
+    opacity: 1;
+    font-family: quicksand-medium;
+  }
+}
+
+.knock-out-questions input,
+.knock-out-questions .mat-select.mat-insurance-question-select-element,
+.knock-out-questions .mat-form-field.mat-insurance-question-select-element,
+.knock-out-questions .mat-select.mat-insurance-question-select-with-search-element {
+  max-width: 343px;
+}
+
+.mat-insurance-question-checkbox-element {
+  @extend .mat-insurance-question-input-element;
+  border: none !important;
+  padding: 0;
+
+  label.mat-checkbox-layout {
+    padding-top: 0;
+
+    .mat-checkbox-inner-container {
+      margin-top: 4px;
+    }
+  }
+
+  &.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background: $mat-insurance-color-blue;
+  }
+
+  .mat-checkbox-frame {
+    border-color: $insurance-grey-radio;
+    border-width: 1px;
+  }
+
+  &.mat-checkbox-checked .mat-checkbox-frame {
+    border-color: rgb(220, 220, 220) !important;
+  }
+
+  &.mat-checkbox .mat-checkbox-ripple {
+    width: 0;
+    height: 0;
+    /* to remove shadow */
+  }
+}
+
+.print-overlay {
+  .mat-insurance-question-checkbox-element {
+    line-height: 30px !important;
+
+    .field-label {
+      white-space: nowrap;
+    }
+  }
+}
+
+.mat-insurance-question-radio-element {
+  border: none !important;
+  font-size: 16px !important;
+
+  .mat-radio-button {
+    margin: 5px 30px 5px 0;
+    font-family: quicksand-medium;
+
+    .mat-radio-label {
+      white-space: normal;
+    }
+    .mat-radio-label-content {
+      white-space: normal !important;
+      max-width: 685px !important;
+    }
+
+    .mat-radio-container {
+      width: 22px;
+      height: 22px;
+      align-self: baseline;
+      margin-top: 3px;
+
+      &:hover .mat-radio-persistent-ripple {
+        background-color: none;
+      }
+    }
+
+    .mat-radio-outer-circle {
+      border-color: $insurance-grey-radio;
+      width: 22px;
+      height: 22px;
+      border-width: 1px;
+    }
+
+    .mat-radio-inner-circle {
+      top: 1px;
+      left: 1px;
+      background: $mat-insurance-color-blue;
+    }
+
+    &.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+      border-color: $mat-insurance-color-blue;
+    }
+
+    &.mat-accent.mat-radio-checked .mat-radio-persistent-ripple {
+      background-color: none;
+    }
+    .mat-radio-ripple {
+      width: 20px;
+      height: 20px;
+      left: calc(50% - 10px);
+      top: calc(50% - 10px);
+      opacity: .5;
+    }
+  }
+}
+
+// .mat-insurance-question-material-input-element {
+//   width: 385px;
+//   font-family: quicksand-regular !important;
+//   font-size: 16px !important;
+//   height: 45px !important;
+//   border: 1px solid $mat-insurance-color-light-grey !important;
+//   line-height: 45px !important;
+//   background-color: $mat-insurance-color-white !important;
+//   background-size: cover !important;
+//   color: $mat-insurance-color-dark-grey !important;
+// }
+
+.mat-insurance-question-date-element {
+  font-family: quicksand-regular !important;
+  font-size: 16px !important;
+  line-height: 16px;
+}
+
+.mat-select-panel {
+  padding: 0 9px;
+  border-radius: 0 !important;
+  margin-top: 47px;
+  min-width: calc(100% + 2px) !important;
+  margin-left: 5px;
+  box-shadow: none !important;
+  border: 1px solid $insurance-color-grey-border;
+
+  .mat-option {
+    border-bottom: 1px dashed $insurance-border-grey;
+    font-family: quicksand-medium;
+    font-size: 16px;
+    padding: 5px 15px;
+    height: auto !important;
+    line-height: normal !important;
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+.mat-insurance-question-error {
+  width: 100%;
+  font-family: quicksand-regular !important;
+  font-size: 12px !important;
+  color: $mat-insurance-color-red !important;
+}
+
+.mat-grid-row-bottom>*:not(:last-child) {
+  margin-bottom: 10px !important;
+  padding-bottom: 0.5rem !important;
+}
+
+// Style for Banner bar
+.blue-snackbar {
+  background: $mat-icon-color-colonial-blue !important;
+  color: $mat-insurance-color-white !important;
+  max-width: 100% !important;
+  width: 100%;
+}
+
+.green-snackbar {
+  background: $insurance-color-green !important;
+  color: $mat-insurance-color-white !important;
+  max-width: 100% !important;
+  width: 100%;
+}
+
+.red-snackbar {
+  background: $error-red !important;
+  color: $mat-insurance-color-white !important;
+  max-width: 100% !important;
+  width: 100%;
+}
+
+.mat-simple-snackbar-action {
+  color: $mat-insurance-color-white !important;
+}
+
+.has-error {
+
+  &.form-group,
+  &.input-group,
+  &.mat-insurance-question-material-input-element {
+    border-color: $mat-insurance-color-red !important;
+
+    .checkbox-control .checkbox,
+    .form-control,
+    .checkbox-control input:checked~.checkbox,
+    .radio-control input:checked~.radio {
+      border-color: $mat-insurance-color-red !important;
+    }
+
+    .checkbox-control {
+      .checkbox:hover {
+        border-color: $mat-insurance-color-red !important;
+      }
+
+      input:checked~.checkbox {
+        background-color: $mat-insurance-color-red !important;
+      }
+
+      input:checked~.checkbox:hover {
+        background-color: $mat-insurance-color-red !important;
+        border-color: $mat-insurance-color-red !important;
+      }
+    }
+
+    .radio-control {
+      .radio:hover {
+        border-color: $mat-insurance-color-red !important;
+      }
+
+      input:checked~.radio {
+        &:after {
+          background-color: $mat-insurance-color-red !important;
+        }
+      }
+
+      input:checked~.radio:hover {
+        &:after {
+          background-color: $mat-insurance-color-red !important;
+        }
+      }
+    }
+
+    /* label {
+      color: $mat-insurance-color-red !important;
+    }*/
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid,
+  .mat-form-field-appearance-outline.ng-invalid {
+    .mat-form-field-outline-thick {
+      color: $mat-insurance-color-red !important;
+    }
+  }
+
+  .mat-form-field-appearance-outline.ng-invalid .mat-form-field-outline {
+    color: $mat-insurance-color-red !important;
+  }
+
+  .mat-insurance-question-date-element {
+    border-color: $mat-insurance-color-red !important;
+  }
+}
+
+input::placeholder,
+input:-ms-input-placeholder,
+.mat-select-placeholder {
+  color: $insurance-placeholder-grey;
+  opacity: 1;
+  font-family: quicksand-medium;
+}
+
+.quote-box {
+  background-color: $mat-insurance-color-white;
+  border: 1px solid $insurance-border-grey-color;
+  border-radius: 4px;
+  padding: 10px 20px 20px 20px;
+}
+
+.insurance-box-heading-text {
+  line-height: 30px;
+  font-family: quicksand-semi-bold;
+  font-size: 20px;
+  color: $mat-insurance-color-text-decoration-dark-blue;
+  text-decoration: none solid rgb(1, 0, 66);
+  margin: 0;
+}
+
+.quote-box-heading-text-right {
+  line-height: 30px;
+  font-family: quicksand-regular;
+  font-size: 15px;
+  color: $mat-insurance-color-dark-black;
+  text-decoration: none solid rgba(0, 0, 0, 0.7);
+}
+
+.insurance-container {
+  border-right: 1px solid $insurance-color-grey-border;
+  padding-right: 20px;
+  width: 60%;
+}
+
+.confirmation-container {
+  border-right: 1px solid $insurance-color-grey-border;
+  padding-right: 20px;
+}
+
+.insurance-no-lable-margin {
+  margin-top: 20px;
+}
+
+// Insurance Button Styles
+.primary-btn {
+  /* width: 123px;
+  height: 36px; */
+  background-color: $insurance-btn-color-red;
+  font-family: robotoregular;
+  font-size: 18px;
+  color: $mat-insurance-color-white;
+  text-decoration: none solid $mat-insurance-color-text-decoration-white;
+  border-radius: 2px !important;
+  padding: 0 10px !important;
+
+  .ml {
+    margin-left: 5px;
+  }
+
+  .mr {
+    margin-right: 5px;
+  }
+}
+
+.secondary-btn {
+  /* width: 156px;
+  height: 36px; */
+  background-color: $mat-insurance-color-white;
+  font-family: quicksand-medium !important;
+  font-size: 18px;
+  color: $mat-insurance-color-blue;
+  text-decoration: none solid $mat-insurance-color-text-decoration-blue;
+  text-align: center;
+  margin-left: auto;
+  padding: 0 !important;
+
+  .ml {
+    margin-left: 5px;
+  }
+
+  .mr {
+    margin-right: 5px;
+  }
+
+  &[disabled],
+  &[disabled]>img {
+    opacity: 0.3;
+    color: $mat-insurance-color-blue;
+  }
+}
+
+.tertiary-btn {
+  /* width: 106px;
+  height: 36px; */
+  font-family: "quicksand-regular";
+  font-size: 18px;
+  color: $mat-insurance-color-gray;
+  text-decoration: none solid $mat-insurance-color-text-decoration-grey;
+  text-align: center;
+  border: 1px solid $insurance-teritary-btn-border !important;
+  border-radius: 2px !important;
+  padding: 0 19px !important;
+
+  .ml {
+    margin-left: 5px;
+  }
+
+  .mr {
+    margin-right: 5px;
+  }
+}
+
+.secondary-dropdown-btn {
+  @extend .secondary-btn;
+  border: 1px solid $mat-insurance-color-blue !important;
+  padding: 0 10px !important;
+  border-radius: 2px !important;
+
+  &[disabled],
+  &[disabled]>img {
+    opacity: 0.3;
+    color: $mat-insurance-color-blue;
+  }
+}
+
+.link {
+  color: $insurance-link-color-blue;
+}
+
+.product-list {
+  padding-left: 50px;
+}
+
+.mat-option-text {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.single-annual-pay {
+  .pay-method {
+    border-right-width: 0 !important;
+  }
+}
+
+.payment-exp-month-width {
+  width: 85px;
+}
+
+.mat-snack-bar-container {
+  background-color: #082;
+  font-size: 16px;
+  color: white;
+  font-family: quicksand-medium !important;
+  font-size: 16px !important;
+}
+
+.alert_snack_bar {
+  background-color: #ce0f0f;
+  font-size: 16px;
+  color: white;
+  font-family: quicksand-medium !important;
+  font-size: 16px !important;
+}
+
+@media screen and (max-width: 450px) {
+  .insurance-main-container-xs .quote-box {
+    padding: 0 0 20px 0 !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .quote-box {
+    margin: 0 $insurance-page-margin-xs;
+  }
+
+  .mat-checkbox-layout .mat-checkbox-label {
+    white-space: normal;
+  }
+
+  .mat-insurance-question-radio-element {
+    .mat-radio-button {
+      &.multi-options {
+        margin-bottom: 20px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .mat-button {
+    line-height: 45px !important;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .tertiary-btn {
+    width: 100%;
+  }
+
+  .product-list {
+    margin-top: 10px;
+  }
+
+  .insurance-container {
+    border-right: none;
+    padding-right: 0;
+    padding-top: 10px;
+    border-top: 1px solid $insurance-border-grey;
+    width: 100%;
+  }
+
+  .confirmation-container {
+    border-right: none;
+    padding-right: 0;
+    padding-top: 10px;
+    border-top: 1px solid $insurance-border-grey;
+  }
+
+  .insurance-box-heading-text {
+    font-size: 16px;
+    line-height: 22px;
+    padding-left: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quote-box {
+    margin: 0 $insurance-page-margin-sm;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .quote-box {
+    margin: 0 $insurance-page-margin-lg;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .tertiary-btn {
+    width: auto;
+  }
+
+  .product-list {
+    margin-top: 0;
+  }
+}
+
+.applicant-businessName-field, .applicant-address1-field {
+  position:relative;
+  span.input-icon img {
+    position: absolute;
+    right: 23px;
+    top: 40px;
+  }
+}
+
+.applicant-knock-out-questions .mat-insurance-question-input-element {
+  width: 343px !important;
+}
+
+@media all and (-ms-high-contrast: none) {
+  .payment-exp-month-width {
+    min-width: calc(100% + 20px) !important;
+  }
+  /* IE10 */
+  *::-ms-backdrop,
+  .payment-exp-month-width {
+    min-width: calc(100% + 20px) !important;
+  }
+  /* IE11 */
+}

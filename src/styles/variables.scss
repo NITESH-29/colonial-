@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600,700&display=swap');
+@import '~@angular/material/theming';
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+
+// define a real custom palette (using http://mcg.mbitson.com)
+
+
+$frontier-primary: (50: #E1EDF5,
+  100: #B3D3E6,
+  200: #81B6D6,
+  300: #4F98C6,
+  400: #2982B9,
+  500: #1392B8,
+  600: #0364A6,
+  700: #02599C,
+  800: #024F93,
+  900: #013D83,
+  A100: #B0CEFF,
+  A200: #7DAFFF,
+  A400: #4A90FF,
+  A700: #3080FF,
+  contrast: (50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ));
+
+// mandatory stuff for custom theming
+$colonial-frontier-app-primary: mat-palette($frontier-primary, 500, 300, 700);
+$colonial-frontier-app-accent: mat-palette($mat-grey, 600, 400, 800);
+$colonial-frontier-app-warn: mat-palette($mat-red);
+
+// Custom Sass colors vars
+$primary: mat-color($colonial-frontier-app-primary);
+$accent: mat-color($colonial-frontier-app-accent);
+$warn: mat-color($colonial-frontier-app-warn);
+
+$body-background-color: #EEF5F9;
+$colonial-blue: #102938;
+$form-field-color: #fff;
+$cloudy-blue :#BCC8CF;
+$darkgrey-blue: #94A5AF;
+$medium-grey: #757575;
+
+// error colors
+$error-pink: #FFBBBD;
+$error-red: #D60000;
+
+$cta-red: #3498DB;
+
+//Typography
+$font: IBM Plex Sans,
+"Trebuchet MS",
+Arial,
+Helvetica,
+sans-serif;
+
+@mixin h1-regular {
+  font-size: 25px;
+  line-height: 0px;
+  font-weight: 400;
+}
+
+@mixin h1-regular-mobile {
+  // font-size: 36px;
+  // line-height: 44px;
+  font-size: 29px;
+  line-height: 29px;
+  font-weight: 400;
+
+}
+
+@mixin h3-bold {
+  font-family: $font;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+
+@mixin h3-bold-mobile {
+  font-family: $font;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 24px;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+
+//Media Queries
+$xx-small: 27em;
+$x-small: 33em;
+$small: 36em;
+$button-realignment-threshold: 663px;
+$medium: 49em;
+$large: 62em;
+$x-large: 74em;
+
+//Margins and spacings
+$insurance-page-margin-lg: 52px;
+$insurance-page-margin-sm: 20px;
+$insurance-page-margin-xs: auto;
+
+// Insurance Specific Variables
+$body-insurance-background-color: #F5F5F5;
+$insurance-header-menu-color: #015a92;
+$insurance-border-grey-color: #e8e8e8;
+$mat-icon-color-white: #ffffff;
+$mat-icon-color-colonial-blue: #074b71;
+$mat-insurance-color-colonial-black: #333333;
+$mat-insurance-color-white: #ffffff;
+$mat-insurance-color-light-blue: #D7DFE3;
+$mat-insurance-color-light-grey: #d2d2d2;
+$mat-insurance-color-dark-black: #000000;
+$mat-insurance-color-light-black: #0b2836;
+$mat-insurance-color-red: #ff0000;
+$mat-insurance-color-grey: #969696;
+$mat-insurance-color-dark-grey: #444444;
+$mat-insurance-color-icon-grey: #8F8F8F;
+$insurance-color-green: #73b559;
+$insurance-color-grey-border: #d6d6d6;
+$insurance-btn-color-red: #cb232d;
+$mat-insurance-color-blue:#438bd7;
+$insurance-color-blue-opaque: rgba(67, 139, 215, .5);
+$mat-insurance-color-text-decoration-blue:rgb(67, 139, 215);
+$mat-insurance-color-text-decoration-white:rgb(255, 255, 255);
+$mat-insurance-color-text-decoration-grey:rgb(112, 112, 112);
+$mat-insurance-color-gray:#707070;
+$insurance-header-background-color: #e0f4ff;
+$insurance-agreement-mail-background-color: #f2f2f2;
+$insurance-agreement-mail-border: #cfcfcf;
+$insurance-agreement-limit-label: #242424;
+$insurance-your-quote-pay-select: #f0f0f0;
+$insurance-border-grey: #cccccc;
+$insurance-your-quote-similar-product-bgcolor: #f9f9f9;
+$insurance-your-quote-similar-product-header-color: #404040;
+$insurance-text-color: #595959;
+$mat-insurance-color-text-decoration-dark-blue: #010042;
+$mat-accordion-header-green:#e0f4ff;
+$mat-indicator-default-status-circle-color:#ddd;
+$mat-indicator-inprogress-status-circle: #ffc800;
+$mat-indicator-complete-status-circle :#8bd66d;
+$insurance-payment-card-info-border: #d7eafa;
+$insurance-a-tag-color: #1392b8;
+$insurance-hr-line-color: #9e9e9e;
+$insurance-error-alert-color: #820e08;
+$insurance-teritary-btn-border: #b0b0b0;
+$insurance-placeholder-grey: #a6a6a6;
+$insurance-grey-radio: #999999;
+$insurance-link-color-blue:#008cff;
+$insurance-step-indicator-default-grey: #949494;
+// Email template
+$insurance-email-button-border-grey: #b8b8b8;
+$insurance-email-button-text-grey: #8a8a8a;
+$insurance-email-input-element-readonly: #f5f5f5;
+
+// ibond 
+$ibond-primary-text-color: #010042;
+$ibond-disable-color: #cccccc;
+$ibond-text-color-blue: #438BD7;

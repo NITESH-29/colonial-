@@ -1,0 +1,102 @@
+/*DO NOT IMPORT THIS FILE INTO ANY STYLESHEET EXCEPT FOR THE MAIN STYLESHEET (colonial-material-theme.scss)*/
+
+@import "~@angular/material/theming";
+@import "variables.scss";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap");
+
+@include mat-core();
+$colonial-material-theme: mat-light-theme(
+  $colonial-frontier-app-primary,
+  $colonial-frontier-app-accent,
+  $colonial-frontier-app-warn
+);
+@include angular-material-theme($colonial-material-theme);
+
+// @font-face {
+//   font-family: 'robotoregular';  
+//   src: url('../styles/font/roboto-regular-webfont.woff2') format('woff2'),
+//        url('../styles/font/roboto-regular-webfont.woff') format('woff');   
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: 'robotolight';
+//   src: url('../styles/font/roboto-light-webfont.woff2') format('woff2'),
+//        url('../styles/font/roboto-light-webfont.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+
+// }
+
+.colonial-new-theme {
+
+  font-family: 'robotoregular'; 
+  color: black;
+
+
+  $colonial-typography: mat-typography-config(
+  $font-family:   'Roboto, sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $display-3:     mat-typography-level(22px, 10px, 500),
+  $display-2:     mat-typography-level(16px, 18px),
+  $display-1:     mat-typography-level(18px, 22px,500),
+  $headline:      mat-typography-level(24px, 10px, 500),
+  $title:         mat-typography-level(20px, 32px, 400),
+  $subheading-2:  mat-typography-level(15px, 17px),
+  $subheading-1:  mat-typography-level(14px, 16px, $letter-spacing: -0.18px),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(12px, 15px, 300),
+  $caption:       mat-typography-level(12px, 14px, 400),
+  $button:        mat-typography-level(14px, 16px, 400),
+  $input:         mat-typography-level(inherit, 1.125, 400)
+);
+
+  @include angular-material-typography($colonial-typography);
+
+  $colonial-new-default-disabled-foreground: rgba(0,0,0, 0.5);
+  $colonial-new-default-disabled-backgound:  rgba(0,0,0,0.05);
+  $colonial-new-black:  rgb(0,0,0);
+  $colonial-new-grey:  #EEEEEE;
+  $colonial-new-property-key-grey: #4A4A4A;
+
+
+  $colonial-new-palette: (
+  100: #16a7f0,
+  200: #EFEFEF,
+  300: $colonial-new-default-disabled-foreground,
+  400: #010042,
+  500: #919191,
+  550: rgba(#F4632E,0.5),
+  600: white,
+  700: rgba(#EFEFEF,0.5),
+  800:  #48B009,
+  900:  red,
+  1000: rgba(0,0,0,0),
+  contrast: (
+    100: white,
+    200: black,
+    300:WHITE,
+    400:white,
+    500: white
+  )
+);
+
+$default-primary-palette: mat-palette($colonial-new-palette,500);
+$default-accent-palette: mat-palette($colonial-new-palette,100);
+$default-warn-palette: mat-palette($mat-red);
+$colonial-new-default-theme: mat-light-theme($default-primary-palette,$default-accent-palette);
+
+
+$input-primary-palette : mat-palette($colonial-new-palette,100);
+$input-accent-palette : mat-palette($colonial-new-palette,400);
+$colonial-new-default-input-theme: mat-light-theme($input-primary-palette,$input-accent-palette,$default-warn-palette);
+
+@include mat-input-theme($colonial-new-default-input-theme);
+@include mat-form-field-theme($colonial-new-default-input-theme);
+
+$theme: mat-light-theme($default-primary-palette, $default-accent-palette, $default-warn-palette);
+                                                                              
+@include angular-material-theme($theme);
+}

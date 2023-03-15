@@ -1,0 +1,154 @@
+@import './variables.scss';
+
+$general_font: quicksand-regular;
+
+h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  label,
+  section,
+  span,
+  div,
+  .mat-form-field,
+  .mat-form-field-label,
+  .mat-button,
+  .mat-raised-button,
+  .mat-icon-button,
+  .mat-stroked-button,
+  .mat-flat-button,
+  .mat-fab,
+  .mat-mini-fab,
+  .ui-widget,
+  .mat-select,
+  .mat-option {
+    font-family: $general_font !important;
+  }
+
+  input.ui-widget,
+  .ui-table .ui-widget,
+  .ui-widget,
+  .mat-tab-label,
+  .mat-tab-link {
+    font-family: $general_font !important;
+  }
+  .main-body-background{
+    font-family: $general_font !important;
+  }
+
+
+// section {
+//   background-color:$general-container-background-color;
+// }
+.general-container{
+  padding: 0px 15px 0px 15px;
+  min-height: 45vh;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  border-radius: 0px !important;
+  &:focus {
+    border-radius: 0px !important;
+  }
+}
+
+.mat-dialog-container {
+  font-family: quicksand-medium !important;
+}
+
+.mat-form-field {
+  line-height: 0 !important;
+  margin: 0 !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: 0 !important;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+  width: auto !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-flex {
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
+.mat-form-field-flex {
+  // border-radius: 0 !important;
+  box-shadow: none !important;
+  min-height: 40px !important;
+}
+.mat-select-value{
+  padding-top: 10px !important;
+}
+.mat-select-arrow-wrapper {
+  padding-top: 10px !important;
+}
+.mat-form-field-infix {
+  height: auto !important;
+  border-top: 0.2em solid transparent;
+  width: 100px !important;
+  outline: none !important;
+}
+
+.modal-btn-close {
+  margin: 0px !important;
+  color: gray;
+  position: relative;
+  top: -15px;
+  right: -15px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline:focus {
+  min-height: 40px !important;
+  border: 2px solid #b8b8b8 !important;
+  transition: none !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.6em 0 0.6em 0 !important;
+}
+
+input.mat-input-element {
+  color: #7a7a7a !important;
+  font-weight: 400 !important;
+}
+.headeing-h1{
+  font-family: quicksand-semi-bold;
+  font-size: 18px;
+  color: #000000;
+  text-decoration: none solid rgb(0, 0, 0);
+}
+.headeing-h2{
+  font-family: quicksand-semi-bold;
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none solid rgb(0, 0, 0);
+}
+
+.headeing-h3{
+  font-family: quicksand-semi-bold;
+  font-size: 14px;
+  color: #000000;
+  text-decoration: none solid rgb(0, 0, 0);
+}
+.dash-margin {
+  border-bottom: 1px dashed #b8b8b8;
+  margin: 5px 0px 0px 0px;
+}
+
+// Theme for internet explorer
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+ .mat-datepicker-toggle .mat-icon-button{
+    margin-top: -28px;
+  }
+
+  .mat-form-field-infix .mat-input-element{
+    margin-top: 10px;
+  }
+}
